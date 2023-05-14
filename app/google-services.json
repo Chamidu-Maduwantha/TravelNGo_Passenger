@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "807809249943",
+    "firebase_url": "https://tavelngo-default-rtdb.firebaseio.com",
+    "project_id": "tavelngo",
+    "storage_bucket": "tavelngo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807809249943:android:798f01b8b1f7bf931b6fd2",
+        "android_client_info": {
+          "package_name": "com.example.travelpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807809249943-sssj4v38hfql1lanf9g0fusorjsvvedi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCukEzbu8Yz9r65bJ_uVTzYwneWQpreCVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807809249943-sssj4v38hfql1lanf9g0fusorjsvvedi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

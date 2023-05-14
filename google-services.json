@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "732889872515",
+    "firebase_url": "https://travelngo-ec82d-default-rtdb.firebaseio.com",
+    "project_id": "travelngo-ec82d",
+    "storage_bucket": "travelngo-ec82d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732889872515:android:b7482c08e73a7f83a003b6",
+        "android_client_info": {
+          "package_name": "com.example.travelpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732889872515-u4beefjg9sq989jj6c4v0ktqbrl23esi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRMB4n4y3P8iz5qqoCkhau1xE4PpVNVBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732889872515-u4beefjg9sq989jj6c4v0ktqbrl23esi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

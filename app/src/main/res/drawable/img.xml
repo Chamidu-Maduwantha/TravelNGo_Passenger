@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/verify"/>
+    <item>
+        <shape
+            android:shape="oval">
+            />
+            <stroke android:width="2dp" android:color="@color/black"/>
+        </shape>
+    </item>
+</layer-list>
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="20dp"/>
+    <stroke android:color="@color/black" android:width="5dp"/>
+</shape>
+

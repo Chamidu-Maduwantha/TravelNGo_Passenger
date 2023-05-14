@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Details"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/upbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:background="@color/lightblue">
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/back"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Qr Create "
+                android:textSize="25sp"
+                android:textStyle="bold|normal"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/formlin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/upbar"
+            android:layout_marginLeft="20dp"
+            >
+            <TextView
+                android:id="@+id/genaral"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Genaral"
+                android:textSize="25sp"
+                android:layout_marginTop="55dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/nic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="National Identity Card Number"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/genaral"
+                />
+
+            <TextView
+                android:id="@+id/edtnic"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/nic"
+                android:text="nic"
+                android:background="@drawable/edt_background"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Name "
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/edtname"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/edtname"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:text="Name"
+                android:layout_below="@+id/birth"
+                android:inputType="datetime"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edt_background"
+                android:layout_marginBottom="5dp"
+                />
+
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Address : "
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/edtbirth"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/edtAddress"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/address"
+                android:text="address"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edt_background"
+                android:textSize="20sp"
+                />
+
+
+            <TextView
+                android:id="@+id/tpas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Travel pass : "
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/edtAddress"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/medium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Medium"
+                android:textSize="20sp"
+                android:layout_below="@+id/tpas"
+                android:layout_marginBottom="5dp"
+
+                />
+
+            <Spinner
+                android:id="@+id/dropmedium"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/medium"
+
+                android:background="@drawable/edt_background"/>
+
+            <TextView
+                android:id="@+id/from"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="From : "
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/dropmedium"
+
+                />
+
+            <EditText
+                android:id="@+id/edtfrom"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/from"
+                android:background="@drawable/edt_background"/>
+
+            <TextView
+                android:id="@+id/to"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="To : "
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/edtfrom"
+
+                />
+
+            <EditText
+                android:id="@+id/edtto"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/to"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/edt_background"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pricelin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/formlin"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            >
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price : LKR "
+                android:textSize="25sp"
+                android:layout_below="@+id/edtfrom"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/edtprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4500 "
+                android:textSize="25sp"
+                android:layout_below="@+id/edtfrom"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pricelin"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnfinish"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:text="Continue to Payment"
+
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
