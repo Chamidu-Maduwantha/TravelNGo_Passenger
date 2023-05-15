@@ -1,6 +1,7 @@
 package com.example.travelpass
 
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,9 +15,36 @@ class splashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        Handler().postDelayed({
+
+        val sessionManager = SessionManager(this)
+
+        if (sessionManager.isLoggedIn()) {
+
+            Handler().postDelayed({
+                val intent = Intent(this@splashScreen, home::class.java)
+                startActivity(intent)
+            }, 3000)
+            // User is already logged in, navigate to the home screen or main activity
+            /*val intent = Intent(this, home::class.java)
+            startActivity(intent)
+            finish()*/
+        } else {
+            Handler().postDelayed({
+                val intent = Intent(this@splashScreen, SelectionPage::class.java)
+                startActivity(intent)
+            }, 3000)
+
+            // User is not logged in, navigate to the login screen
+            /*val intent = Intent(this, SelectionPage::class.java)
+            startActivity(intent)
+            finish()*/
+        }
+
+       /* Handler().postDelayed({
             val intent = Intent(this@splashScreen, SelectionPage::class.java)
             startActivity(intent)
-        }, 3000)
+        }, 3000)*/
     }
+
+
 }

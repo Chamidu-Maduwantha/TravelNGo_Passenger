@@ -20,4 +20,26 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_home_page">Home_page</string>
     <string name="title_activity_home">home</string>
+
+    <string-array name="dropdown_items">
+        <item>--</item>
+        <item>Bus</item>
+        <item>Train</item>
+    </string-array>
+
+    <string-array name="from_items">
+        <item>--</item>
+        <item>Colombo</item>
+        <item>Matara</item>
+        <item>Polonnaruwa</item>
+    </string-array>
+
+    <string-array name="to_items">
+        <item>--</item>
+        <item>Matara</item>
+        <item>Colombo</item>
+        <item>Polonnaruwa</item>
+    </string-array>
+
+
 </resources>

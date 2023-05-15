@@ -74,6 +74,33 @@ class home : AppCompatActivity() {
 
             })
 
+        val statusRef = FirebaseDatabase.getInstance().getReference().child("passenger").child(uid).child("status")
+
+        statusRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val status = snapshot.getValue(String::class.java)
+
+                val text1 = findViewById<TextView>(R.id.txt1)
+                val text2 = findViewById<TextView>(R.id.txt2)
+                val btncreate = findViewById<Button>(R.id.create)
+                val bverify = findViewById<Button>(R.id.btnverify)
+                val imag = findViewById<ImageView>(R.id.img)
+
+                if (status == "active") {
+
+                    text1.text = "Thank You"
+                    text2.text = "Now You can use this QR as your travel pass"
+                    imag.setImageResource(R.drawable.highwaybus)
+                    bverify.visibility = View.GONE
+                    btncreate.visibility = View.GONE
+                    recyclerView.visibility = View.VISIBLE
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle the error if necessary
+            }
+        })
 
         userRef = database.getReference("User").child(uid)
 
@@ -82,6 +109,10 @@ class home : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.create.setOnClickListener {
+            val intent = Intent(this, Details::class.java)
+            startActivity(intent)
+        }
 
 
 
@@ -90,6 +121,8 @@ class home : AppCompatActivity() {
 
 
         recyclerView = findViewById(R.id.mRec)
+
+        recyclerView.visibility = View.GONE
         passengerAdapter = PassengerAdapter()
         recyclerView.adapter = passengerAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)

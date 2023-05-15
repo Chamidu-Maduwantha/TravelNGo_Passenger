@@ -22,6 +22,7 @@
             android:background="@color/lightblue">
 
             <Button
+                android:id="@+id/btnback"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/back"
@@ -167,7 +168,7 @@
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/medium"
-
+                android:layout_centerInParent="true"
                 android:background="@drawable/edt_background"/>
 
             <TextView
@@ -181,11 +182,12 @@
 
                 />
 
-            <EditText
-                android:id="@+id/edtfrom"
+            <Spinner
+                android:id="@+id/dropFrom"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/from"
+                android:layout_below="@+id/medium"
+                android:layout_centerInParent="true"
                 android:background="@drawable/edt_background"/>
 
             <TextView
@@ -199,12 +201,12 @@
 
                 />
 
-            <EditText
-                android:id="@+id/edtto"
+            <Spinner
+                android:id="@+id/dropTo"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/to"
-                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/medium"
+                android:layout_centerInParent="true"
                 android:background="@drawable/edt_background"/>
 
         </LinearLayout>

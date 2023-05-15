@@ -112,7 +112,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/bus"
+                    android:src="@drawable/highwaybus"
                     />
                 <TextView
                     android:layout_width="100dp"

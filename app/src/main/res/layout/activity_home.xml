@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:paddingTop="5dp"
+        android:padding="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
         android:paddingRight="20dp"
         android:background="@drawable/card_background"
         android:layout_below="@+id/linear1"
+
         >
 
         <FrameLayout
@@ -49,6 +51,7 @@
             android:layout_marginRight="10dp">
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -70,14 +73,22 @@
             android:layout_marginTop="5dp">
 
             <TextView
+                android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Verify your profile"/>
+                android:text="Create Your Qr Code"
+                android:textColor="@color/black"
+                android:padding ="5dp"
+                android:textStyle="bold"
+                />
 
             <TextView
+                android:id="@+id/txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Complete verification to gain full acces to your Travelngo acccount"
+                android:text="Complete verification to create your QR code"
+                android:textColor="@color/black"
+                android:padding="8dp"
                 />
 
             <Button
@@ -86,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="@drawable/button_background"
-                android:text="Verify profile "
+                android:text="Create "
                 android:layout_marginTop="8dp"
                 />
         </LinearLayout>
@@ -178,6 +189,7 @@
             tools:listitem="@layout/qr_item" />
 
         <Button
+            android:id="@+id/create"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Create New QR"

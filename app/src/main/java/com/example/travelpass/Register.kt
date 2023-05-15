@@ -104,6 +104,10 @@ class Register : AppCompatActivity() {
                 hashMap.put("birthday",birthday)
                 hashMap.put("address",address)
                 hashMap.put("Travel date","")
+                hashMap.put("pass type","")
+                hashMap.put("status","")
+                hashMap.put("from","")
+                hashMap.put("to","")
 
                 databaseReference.setValue(hashMap).addOnCompleteListener (this){
                     if (it.isSuccessful){

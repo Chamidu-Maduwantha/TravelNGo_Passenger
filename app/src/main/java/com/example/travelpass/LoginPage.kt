@@ -39,8 +39,13 @@ class LoginPage : AppCompatActivity() {
 
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
                     if (it.isSuccessful){
+
+                        val sessionManager = SessionManager(this)
+                        sessionManager.setLoggedIn(true)
+
                         val intent = Intent(this@LoginPage,home::class.java)
                         startActivity(intent)
+
                     }else{
                         Toast.makeText(applicationContext,"email or password incorrect",Toast.LENGTH_SHORT).show()
                     }
