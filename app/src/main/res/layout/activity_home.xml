@@ -125,6 +125,7 @@
             android:paddingRight="20dp"
             >
             <ImageView
+                android:id="@+id/train"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:src="@drawable/train"
@@ -148,6 +149,7 @@
             >
 
             <ImageView
+                android:id="@+id/bus"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:src="@drawable/bus"

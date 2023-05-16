@@ -52,6 +52,8 @@ class home : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
+        recyclerView = findViewById(R.id.mRec)
+
         val uid = auth.currentUser?.uid
         if (uid == null) {
             // If the user is not authenticated, go to the login activity
@@ -115,16 +117,33 @@ class home : AppCompatActivity() {
         }
 
 
+        binding.train.setOnClickListener{
+            val intent = Intent(this,view_qr::class.java)
+            startActivity(intent)
+        }
+
+        binding.bus.setOnClickListener{
+            auth.signOut()
+
+            // Redirect the user to the login activity or any desired destination
+            val intent = Intent(this, LoginPage::class.java)
+            startActivity(intent)
+            finish() // Op
+        }
 
         //Recycle view part
 
 
 
-        recyclerView = findViewById(R.id.mRec)
 
+        val passengers = mutableListOf<Passenger>()
+
+
+// Set up the RecyclerView with the PassengerAdapter
+        val recyclerView: RecyclerView = findViewById(R.id.mRec)
         recyclerView.visibility = View.GONE
-        passengerAdapter = PassengerAdapter()
-        recyclerView.adapter = passengerAdapter
+        val adapter = PassengerAdapter(passengers) // Replace `passengers` with your actual list of passengers
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
     }

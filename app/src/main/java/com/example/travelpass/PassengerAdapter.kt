@@ -16,9 +16,9 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 
 
-class PassengerAdapter : RecyclerView.Adapter<PassengerViewHolder>(){
+class PassengerAdapter (private val passengers: MutableList<Passenger>): RecyclerView.Adapter<PassengerViewHolder>(){
 
-    private val passengers = mutableListOf<Passenger>()
+
     private val database = FirebaseDatabase.getInstance()
 
 
@@ -29,17 +29,19 @@ class PassengerAdapter : RecyclerView.Adapter<PassengerViewHolder>(){
         // add a ValueEventListener to fetch the data from Firebase
         passengerRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                // clear the passengers list and populate it with the updated data
+                // Clear the passengers list and populate it with the QR data of the current user
                 passengers.clear()
                 for (passengerSnapshot in snapshot.children) {
                     val passenger = passengerSnapshot.getValue(Passenger::class.java)
-                    passenger?.let { passengers.add(it) }
+                    if (passenger?.userId == FirebaseAuth.getInstance().currentUser?.uid) {
+                        passenger?.let { passengers.add(it) }
+                    }
                 }
                 notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // handle the error here
+                // handle the error
             }
         })
     }
