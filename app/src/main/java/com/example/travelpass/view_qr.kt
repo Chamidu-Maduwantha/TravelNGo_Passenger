@@ -1,35 +1,28 @@
 package com.example.travelpass
 
-import android.content.Context
-import android.content.Intent
-import android.graphics.Bitmap
+
+import android.content.ContentValues
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
-import android.text.style.ForegroundColorSpan
 import android.util.Log
-import android.widget.CalendarView
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import com.squareup.picasso.Picasso
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
-import android.text.SpannableString
-import android.widget.ImageView
-import androidx.core.net.ParseException
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.qrcode.QRCodeWriter
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
 
 class view_qr : AppCompatActivity() {
 
-    private lateinit var selectedDates: MutableList<String>
-    private lateinit var database: FirebaseDatabase
-    private lateinit var datesRef: DatabaseReference
     private lateinit var qrCodeImageView: ImageView
-
     private lateinit var calendarView: MaterialCalendarView
-    private lateinit var databaseRef: DatabaseReference
 
 
     private lateinit var auth:FirebaseAuth
@@ -38,6 +31,7 @@ class view_qr : AppCompatActivity() {
         setContentView(R.layout.activity_view_qr)
 
 
+        FirebaseApp.initializeApp(this)
 
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid!!
@@ -46,7 +40,7 @@ class view_qr : AppCompatActivity() {
 
         calendarView = findViewById(R.id.calendarView)
 
-// Set listener to retrieve data from Firebase
+        // Set listener to retrieve data from Firebase
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // Clear existing events
@@ -79,17 +73,82 @@ class view_qr : AppCompatActivity() {
         qrCodeImageView = findViewById(R.id.img_view)
 
         val userId = auth.currentUser?.uid
-        if (userId != null) {
+        /*if (userId != null) {
             val passenger = getPassenger(userId)
             if (passenger != null) {
                 val qrCodeBitmap = generateQrCode(passenger)
                 qrCodeImageView.setImageBitmap(qrCodeBitmap)
             }
+        }*/
+
+
+
+
+
+
+
+
+
+        val storage = FirebaseStorage.getInstance()
+        val storageRef = storage.reference.child("/qr_codes/$userId.jpg")
+
+        val imageView: ImageView = findViewById(R.id.img_view)
+
+        storageRef.downloadUrl.addOnSuccessListener { uri ->
+            val imageUrl: String = uri.toString()
+            Picasso.get()
+                .load(imageUrl)
+                .into(imageView)
+        }.addOnFailureListener { exception -> }
+
+
+
+        val tfrom = findViewById<TextView>(R.id.From)
+        val tto = findViewById<TextView>(R.id.To)
+        val typ = findViewById<TextView>(R.id.pass)
+        val act = findViewById<Button>(R.id.active)
+
+        val database = FirebaseDatabase.getInstance()
+
+        val passengerRef = database.getReference("passenger").child(userId!!)
+
+        passengerRef.child("status").get().addOnSuccessListener { snapshot ->
+            val status = snapshot.value?.toString()
+            if (status == "active") {
+                // Set button color to a specific color when status is "active"
+                act.setBackgroundColor(Color.GREEN)
+                act.setText("active")
+
+            } else {
+                // Set default button color when status is not "active"
+                act.setBackgroundColor(Color.RED)
+            }
+        }.addOnFailureListener { exception ->
+            // Handle error in retrieving status from Firebase Database
+            Log.e(ContentValues.TAG, "Failed to retrieve status from Firebase Database", exception)
         }
+
+        passengerRef.get().addOnSuccessListener { snapshot ->
+            val from = snapshot.child("from").value?.toString()
+            val to = snapshot.child("to").value?.toString()
+            val type = snapshot.child("pass type").value?.toString()
+
+            // Display the name and NIC as desired (e.g., set text on TextViews)
+            tfrom.text = from
+            tto.text = to
+            typ.text = type
+
+        }.addOnFailureListener { exception ->
+            // Handle error in retrieving data from Firebase Database
+            Log.e(ContentValues.TAG, "Failed to retrieve data from Firebase Database", exception)
+        }
+
+
+
 
     }
 
-    private fun getPassenger(userId: String): Passenger? {
+   /* private fun getPassenger(userId: String): Passenger? {
         val databaseRef = FirebaseDatabase.getInstance().getReference("passenger").child(userId)
         var passenger: Passenger? = null
 
@@ -109,29 +168,26 @@ class view_qr : AppCompatActivity() {
             }
         })
         return passenger
-    }
+    }*/
 
-    private fun generateQrCode(passenger: Passenger): Bitmap {
-        val qrCodeData = "${passenger.userId}"
-        val qrCodeWriter = QRCodeWriter()
-        val bitMatrix = qrCodeWriter.encode(qrCodeData, BarcodeFormat.QR_CODE, 512, 512)
-        val qrCodeBitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.RGB_565)
-        for (x in 0 until 512) {
-            for (y in 0 until 512) {
-                qrCodeBitmap.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
-            }
-        }
-        return qrCodeBitmap
-    }
+
 
     companion object {
         private const val EXTRA_USER_ID = "extra_user_id"
 
-        fun createIntent(context: Context, userId: String): Intent {
+
+        /*fun createIntent(context: Context, userId: String): Intent {
             val intent = Intent(context, view_qr::class.java)
             intent.putExtra(EXTRA_USER_ID, userId)
             return intent
-        }
+        }*/
+
+
+
+
+
+
+
     }
 }
 

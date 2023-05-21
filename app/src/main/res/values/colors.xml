@@ -12,6 +12,7 @@
     <color name="bgclr">#422DFF</color>
     <color name="bgbtn">#EEE40A</color>
     <color name="gray">#f5f2f2</color>
-    <color name="lightblue">#E6EAFD</color>
+    <color name="lightblue">#FFFFFF</color>
+    <color name="red">#FF0000</color>
 
 </resources>

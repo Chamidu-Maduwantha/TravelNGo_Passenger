@@ -1,5 +1,6 @@
 package com.example.travelpass
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,12 +8,14 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.util.Date
+import java.util.*
 import java.util.stream.Stream
+import kotlin.collections.HashMap
 
 class Register : AppCompatActivity() {
 
@@ -40,7 +43,7 @@ class Register : AppCompatActivity() {
         remail = findViewById(R.id.r_email)
         cpassword = findViewById(R.id.r_cpassword)
         nic = findViewById(R.id.nic)
-        birthday  = findViewById(R.id.r_birthday)
+        birthday = findViewById(R.id.edtBirthday)
         address = findViewById(R.id.r_address)
 
 
@@ -88,7 +91,30 @@ class Register : AppCompatActivity() {
 
 
 
+        birthday.setOnClickListener {
+            showDatePickerDialog()
+        }
+
+
+
+
     }
+
+    private fun showDatePickerDialog() {
+        val edtBirthday = findViewById<TextInputEditText>(R.id.edtBirthday)
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+            val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+            edtBirthday.setText(selectedDate)
+        }, year, month, day)
+
+        datePickerDialog.show()
+    }
+
 
     private fun registerUser(userName:String, email:String, password:String, nic:String,birthday:String,address:String){
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this) {

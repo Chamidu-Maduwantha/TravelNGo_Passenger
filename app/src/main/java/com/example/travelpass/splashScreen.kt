@@ -16,28 +16,9 @@ class splashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
 
-       /* val sessionManager = SessionManager(this)
-
-        if (sessionManager.isLoggedIn()) {
-
-            Handler().postDelayed({
-                val intent = Intent(this@splashScreen, home::class.java)
-                startActivity(intent)
-            }, 3000)
-            // User is already logged in, navigate to the home screen or main activity
-            *//*val intent = Intent(this, home::class.java)
-            startActivity(intent)
-            finish()*//*
-        } else {
 
 
-            // User is not logged in, navigate to the login screen
-            val intent = Intent(this, SelectionPage::class.java)
-            startActivity(intent)
-            finish()
-        }*/
-
-       Handler().postDelayed({
+      Handler().postDelayed({
             val intent = Intent(this@splashScreen, SelectionPage::class.java)
             startActivity(intent)
         }, 3000)

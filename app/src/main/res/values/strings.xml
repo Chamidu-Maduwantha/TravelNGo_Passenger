@@ -19,7 +19,9 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_home_page">Home_page</string>
-    <string name="title_activity_home">home</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open" />
+    <string name="navigation_drawer_close" />
 
     <string-array name="dropdown_items">
         <item>--</item>
@@ -40,6 +42,8 @@
         <item>Colombo</item>
         <item>Polonnaruwa</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

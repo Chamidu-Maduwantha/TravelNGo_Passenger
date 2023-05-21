@@ -124,6 +124,7 @@
                         android:background="@drawable/edt_background"
                         android:hint="Enter"
                         android:paddingTop="12dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -140,6 +141,7 @@
                         android:background="@drawable/edt_background"
                         android:hint="Enter"
                         android:paddingTop="12dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -149,14 +151,23 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/r_birthday"
-                        android:layout_width="350dp"
-                        android:layout_height="50dp"
-                        android:inputType="datetime"
-                        android:background="@drawable/edt_background"
-                        android:hint="Enter"
-                        android:paddingTop="12dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Birthday">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtBirthday"
+                            android:layout_width="350dp"
+                            android:layout_height="50dp"
+                            android:clickable="true"
+                            android:background="@drawable/edt_background"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:drawableEnd="@drawable/icon_calender"
+                            android:drawablePadding="8dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="wrap_content"

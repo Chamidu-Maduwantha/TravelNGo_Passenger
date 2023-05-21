@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
-            android:background="@color/lightblue">
+            >
 
             <Button
                 android:id="@+id/btnback"
