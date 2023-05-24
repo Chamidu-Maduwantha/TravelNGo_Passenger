@@ -12,133 +12,141 @@
 
     tools:context=".view_qr">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="13dp"
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:padding="13dp"
 
-            <TextView
-                android:id="@+id/pass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pass"
-                android:layout_gravity="center"
-                android:textStyle="bold|normal"
-                android:textColor="#030F39"
-                android:textSize="18sp"
+           >
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="50dp"
+               android:orientation="horizontal"
+               android:layout_gravity="center"
+               >
 
-                />
+               <TextView
+                   android:id="@+id/pass"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Pass"
+                   android:layout_gravity="center"
+                   android:textStyle="bold|normal"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"
 
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  Pass  -     "
-                android:layout_gravity="center"
-                android:textStyle="bold|normal"
-                android:textColor="#030F39"
-                android:textSize="18sp"
-
-                />
-
-            <TextView
-                android:id="@+id/From"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" From"
-                android:layout_gravity="center"
-                android:textColor="#030F39"
-                android:textSize="18sp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="   To   "
-                android:layout_gravity="center"
-                android:textColor="#030F39"
-                android:textSize="18sp"
-                />
+                   />
 
 
-            <TextView
-                android:id="@+id/To"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" To"
-                android:layout_gravity="center"
-                android:textColor="#030F39"
-                android:textSize="18sp"
-                />
+               <TextView
+
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="  Pass  -     "
+                   android:layout_gravity="center"
+                   android:textStyle="bold|normal"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"
+
+                   />
+
+               <TextView
+                   android:id="@+id/From"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=" From"
+                   android:layout_gravity="center"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="   To   "
+                   android:layout_gravity="center"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"
+                   />
 
 
-
-
-
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/active"
-            android:layout_width="75dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:textSize="10sp"
-            android:background="@drawable/button_background"
-            android:layout_marginBottom="25dp"
-            />
-
-        <ImageView
-            android:id="@+id/img_view"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center_horizontal"
-            />
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Usage Calender"
-                android:layout_gravity="center"
-                android:textStyle="bold|normal"
-                android:textColor="#030F39"
-                android:textSize="18sp"/>
-
-
-            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:mcv_showOtherDates="all" />
+               <TextView
+                   android:id="@+id/To"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=" To"
+                   android:layout_gravity="center"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"
+                   />
 
 
 
 
-        </LinearLayout>
+
+           </LinearLayout>
 
 
-    </LinearLayout>
+           <Button
+               android:id="@+id/active"
+               android:layout_width="75dp"
+               android:layout_height="20dp"
+               android:layout_gravity="center"
+               android:textSize="10sp"
+               android:background="@drawable/button_background"
+               android:layout_marginBottom="25dp"
+               />
+
+           <ImageView
+               android:id="@+id/img_view"
+               android:layout_width="250dp"
+               android:layout_height="250dp"
+               android:src="@mipmap/ic_launcher"
+               android:layout_marginBottom="30dp"
+               android:layout_gravity="center_horizontal"
+               />
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               android:layout_gravity="center"
+               >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Usage Calender"
+                   android:layout_gravity="center"
+                   android:textStyle="bold|normal"
+                   android:textColor="#030F39"
+                   android:textSize="18sp"/>
+
+
+               <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                   android:id="@+id/calendarView"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   app:mcv_showOtherDates="all" />
+
+
+
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+
+
+
+   </ScrollView>
 
 </androidx.cardview.widget.CardView>

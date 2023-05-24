@@ -14,6 +14,7 @@ class PasswordChange : AppCompatActivity() {
     private lateinit var editTextCurrentPassword: EditText
     private lateinit var editTextNewPassword: EditText
     private lateinit var buttonChangePassword: Button
+    private  lateinit var btnback:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class PasswordChange : AppCompatActivity() {
         editTextCurrentPassword = findViewById(R.id.editTextCurrentPassword)
         editTextNewPassword = findViewById(R.id.editTextNewPassword)
         buttonChangePassword = findViewById(R.id.buttonChangePassword)
+        btnback = findViewById(R.id.btnback)
 
         buttonChangePassword.setOnClickListener {
             val currentPassword = editTextCurrentPassword.text.toString()
@@ -29,6 +31,10 @@ class PasswordChange : AppCompatActivity() {
             changePassword(currentPassword, newPassword)
         }
 
+        btnback.setOnClickListener {
+            val intent = Intent(this,home::class.java)
+            startActivity(intent)
+        }
 
 
 

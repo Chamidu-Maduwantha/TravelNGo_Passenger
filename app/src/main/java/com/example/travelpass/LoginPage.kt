@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
@@ -16,6 +17,7 @@ class LoginPage : AppCompatActivity() {
     lateinit var lemail:EditText
     lateinit var lpassword: EditText
     lateinit var btnlog : Button
+    lateinit var reg : TextView
 
     private lateinit var auth: FirebaseAuth
 
@@ -28,6 +30,7 @@ class LoginPage : AppCompatActivity() {
         btnlog = findViewById(R.id.btnlog)
         lemail = findViewById(R.id.elog_email)
         lpassword = findViewById(R.id.elog_password)
+        reg = findViewById(R.id.reg)
 
         btnlog.setOnClickListener {
             val email  = lemail.text.toString()
@@ -62,10 +65,11 @@ class LoginPage : AppCompatActivity() {
         }
 
 
-        /*regButton.setOnClickListener {
-            val intent = Intent(this,Register::class.java)
+
+        reg.setOnClickListener {
+            val intent = Intent(this, Register::class.java)
             startActivity(intent)
-        }*/
+        }
 
     }
 }

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.TravelPass"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".PasswordChange"
             android:exported="false" />
         <activity

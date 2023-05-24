@@ -89,7 +89,7 @@ class PassengerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         passengerRef.get().addOnSuccessListener { snapshot ->
             val from = snapshot.child("from").value?.toString()
             val to = snapshot.child("to").value?.toString()
-            val type = snapshot.child("pass type").value?.toString()
+            val type = snapshot.child("passType").value?.toString()
 
             // Display the name and NIC as desired (e.g., set text on TextViews)
             tfrom.text = from

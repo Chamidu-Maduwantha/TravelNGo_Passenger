@@ -105,7 +105,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="12dp" />
 
                     <TextView
@@ -122,7 +121,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="12dp" />
 
                     <TextView
@@ -139,7 +137,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="12dp" />
 
                     <TextView
@@ -154,7 +151,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Birthday">
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edtBirthday"
@@ -183,7 +180,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="12dp" />
 
 
@@ -201,7 +197,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="20dp" />
 
                     <TextView
@@ -218,7 +213,6 @@
                         android:layout_width="350dp"
                         android:layout_height="50dp"
                         android:background="@drawable/edt_background"
-                        android:hint="Enter"
                         android:paddingTop="20dp" />
 
 
@@ -234,6 +228,7 @@
                     android:textColor="@color/black">
 
                     <CheckBox
+                        android:id="@+id/check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/bgbtn" />

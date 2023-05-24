@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
@@ -29,6 +30,7 @@ class Register : AppCompatActivity() {
     lateinit var nic : EditText
     lateinit var birthday : EditText
     lateinit var address : EditText
+    lateinit var checkbox: CheckBox
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +47,7 @@ class Register : AppCompatActivity() {
         nic = findViewById(R.id.nic)
         birthday = findViewById(R.id.edtBirthday)
         address = findViewById(R.id.r_address)
+        checkbox = findViewById(R.id.check)
 
 
 
@@ -83,8 +86,13 @@ class Register : AppCompatActivity() {
 
             }
 
+            if (!checkbox.isChecked){
+                Toast.makeText(applicationContext,"You should agree to Terms and Conditions",Toast.LENGTH_SHORT).show()
+            }else{
+                registerUser(userName, email, password,nic,birthday,address)
+            }
 
-            registerUser(userName, email, password,nic,birthday,address)
+
 
         }
 
@@ -130,7 +138,7 @@ class Register : AppCompatActivity() {
                 hashMap.put("birthday",birthday)
                 hashMap.put("address",address)
                 hashMap.put("Travel date","")
-                hashMap.put("pass type","")
+                hashMap.put("passType","")
                 hashMap.put("status","")
                 hashMap.put("from","")
                 hashMap.put("to","")

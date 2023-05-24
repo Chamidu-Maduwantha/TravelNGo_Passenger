@@ -192,7 +192,7 @@ class Details : AppCompatActivity() {
             currentUser?.uid?.let { userId ->
                 val database = FirebaseDatabase.getInstance()
                 val userRef = database.reference.child("passenger").child(userId)
-                userRef.child("pass type").setValue(selectedMedium)
+                userRef.child("passType").setValue(selectedMedium)
                 userRef.child("from").setValue(selectedFrom)
                 userRef.child("to").setValue(selectedTo)
             }
