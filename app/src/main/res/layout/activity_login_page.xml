@@ -100,8 +100,10 @@
                     android:id="@+id/elog_email"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
+                    android:padding="5dp"
                     android:background="@drawable/edt_background"
-                    android:hint="Enter"
+                    android:autofillHints="emailAddress"
+                    android:inputType="textEmailAddress"
                     android:textColor="@color/black"
                     android:paddingTop="12dp" />
 
@@ -118,8 +120,10 @@
                     android:id="@+id/elog_password"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
+                    android:padding="5dp"
                     android:background="@drawable/edt_background"
-                    android:hint="Enter"
+                    android:autofillHints="password"
+                    android:inputType="textPassword"
                     android:textColor="@color/black"
                     android:paddingTop="20dp" />
             </LinearLayout>
