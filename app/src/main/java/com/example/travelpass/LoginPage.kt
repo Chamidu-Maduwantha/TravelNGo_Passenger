@@ -13,11 +13,11 @@ import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
 
 class LoginPage : AppCompatActivity() {
-   lateinit var regButton: Button
     lateinit var lemail:EditText
     lateinit var lpassword: EditText
     lateinit var btnlog : Button
     lateinit var reg : TextView
+    lateinit var forget :  TextView
 
     private lateinit var auth: FirebaseAuth
 
@@ -31,6 +31,7 @@ class LoginPage : AppCompatActivity() {
         lemail = findViewById(R.id.elog_email)
         lpassword = findViewById(R.id.elog_password)
         reg = findViewById(R.id.reg)
+        forget = findViewById(R.id.forgetpass)
 
         btnlog.setOnClickListener {
             val email  = lemail.text.toString()
@@ -70,6 +71,13 @@ class LoginPage : AppCompatActivity() {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
+
+
+        forget.setOnClickListener {
+            val intent = Intent(this,ForgotPassword::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
